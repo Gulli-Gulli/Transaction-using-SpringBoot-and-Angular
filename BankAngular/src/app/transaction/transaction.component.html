@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table table-bordered table-striped" style="margin: 15px;">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>DATE</th>
+        <th>SENDER ACC</th>
+        <th>SENDER NAME</th>
+        <th>RECIVER ACC</th>
+        <th>RECIVER NAME</th>
+        <th>TRANSFER AMT</th>
+        <th>MESSAGE TYPE</th>
+        <th>RESULT</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let table of tables">
+        <td><span>{{table.transactionId}}</span></td>
+        <td><span>{{table.date}}</span></td>
+        <td><span>{{table.senderAccno}}</span></td>
+        <td><span>{{table.senderName}}</span></td>
+        <td><span>{{table.receiverAccno}}</span></td>
+        <td><span>{{table.receiverName}}</span></td>
+        <td><span>{{table.transferAmt}}</span></td>
+        <td><span>{{table.txnType}}</span></td>
+        <td><span>{{table.msgType}}</span></td>
+        <td><span>{{table.result}}</span></td>
+      </tbody>
+    </table>
+  </div>

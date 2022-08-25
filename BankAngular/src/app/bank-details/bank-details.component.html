@@ -1,0 +1,147 @@
+<!-- ---------------------------------------List of All the Account detials--------------------------------------- -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheets" src="/BankApplication/src/app/bank-senderobj/bank-senderobj.component.css">
+</head>
+<body>
+    <div class="container">
+        <table class="table table-bordered table-striped" style="margin: 15px;">
+          <thead>
+          <tr>
+            <th>CUSTOMER ID</th>
+            <th>ACC. HOLDER NAME</th>
+            <th>CLEAR BALANCE</th>
+            <th>OVERDRAFT</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let senderobj of bankdetails">
+            <td><span>{{senderobj.customer_id}}</span></td>
+            <td><span>{{senderobj.account_holder_name}}</span></td>
+            <td><span>{{senderobj.clear_balance_inr_credit}}</span></td>
+            <td><span>{{senderobj.overdraft}}</span></td>
+
+          </tbody>
+        </table>
+      </div>
+    
+</body>
+</html> -->
+
+<!-- ---------------------------------------Single Account senderobj--------------------------------------- -->
+
+
+<!-- <div class="container">
+  <h2>Transaction</h2>
+  <div class="sender-container">
+    <p><input type="text" #inp (keyup)="getSenderDetails(inp.value)"></p>
+  </div>
+  <div class="container">
+    <table class="table table-bordered table-striped" style="margin: 15px;">
+      <thead   >
+      <tr>
+        <th>CUSTOMER ID</th>
+        <th>ACC. HOLDER NAME</th>
+        <th>CLEAR BALANCE</th>
+        <th>OVERDRAFT</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let senderobj of bankdetails">
+      <tr *ngIf="inp.value.length == 14 && ">
+        <td><span>{{senderobj.customer_id}}</span></td>
+        <td><span>{{senderobj.account_holder_name}}</span></td>
+        <td><span>{{senderobj.clear_balance_inr_credit}}</span></td>
+        <td><span>{{senderobj.overdraft}}</span></td>
+
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+<!-- ---------------------------------------Transaction Commit--------------------------------------- -->
+
+<div class="parent" style=" display: flex; flex-direction: cloumn;">
+
+  <div class="container-one">
+    <h1>Let's Transact</h1>
+    <img src="assets/images/together.svg" alt="">
+  </div>
+
+  <div class="container-two">
+    <div class="segment">
+      <fieldset>
+        <p>Sender Infromation</p>
+        <label class="sen-lab">
+          Account Number: <input type="text" #inp (keyup)="getSenderDetails(inp.value)" required />
+        </label><br>
+        <label class="sen-lab">
+          Account Holder Name: <input type="text" id="accHoldNameSen" value={{senderobj?.account_holder_name}}
+            required />
+        </label><br>
+        <label class="sen-lab">
+          Clear Balance: <input type="text" id="balance" value={{senderobj?.clear_balance_inr_credit}} readonly
+            required />
+        </label><br>
+        <label class="sen-lab">
+          Overdraft: <input type="text" id="overdraft" value={{senderobj?.overdraft}} readonly required />
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="segment">
+      <fieldset>
+        <p>Receiver Infromation</p>
+        <label class="rec-lab">
+          BIC No.: <input type="text" class="val" #val (keyup)="getDetails(val.value)" required />
+        </label><br>
+        <label class="rec-lab">
+          Bank Name : <input type="text" value={{dataobj?.rec_Institution_Name}} required />
+        </label><br>
+        <label class="rec-lab">
+          Account Number:<input type="text" #x (keyup)="getReciverDetails(x.value)" required />
+        </label><br>
+        <label class="rec-lab">
+          Account Holder Name:<input type="text" id="accHoldNameRec" value={{reciverobj?.account_holder_name}}
+            required />
+        </label><br>
+        <label class="rec-lab">
+          Money(INR):<input id="money" type="text" required>
+        </label><br>
+      </fieldset>
+    </div>
+
+    <div class="segment-txn">
+      <fieldset>
+        <p>Transaction Type</p>
+        <label for="CustomerTxn" class="txn-lab">
+          <input type="radio" name="TransactionType" #ct value="CustomerTxn" (change)="txn(ct.value)">Customer Txn
+        </label><br>
+        <label for="BankTxn" class="txn-lab">
+          <input type="radio" name="TransactionType" #bt value="BankTxn" (change)="txn(bt.value)">Bank Txn
+        </label>
+      </fieldset><br>
+      <select #teams (change)="onSelected(teams.value)">
+        <option style="text-align: center;" default>Message Type</option>
+        <option>CHQB</option>
+        <option>CORT</option>
+        <option>HOLD</option>
+        <option>INTC</option>
+        <option>PHOB</option>
+        <option>PHOI</option>
+        <option>PHON</option>
+        <option>REPA</option>
+        <option>SDVA</option>
+      </select><br>
+
+      <div style="display: flex; justify-content: space-around; ">
+        <button style="text-align: center;  margin: 4px;" (click)="transact()">Transfer</button>
+        <button style="text-align: center;  margin: 4px;" (click)="transactionTable()">Transaction table</button>
+      </div>
+    </div>
+  </div>
+</div>

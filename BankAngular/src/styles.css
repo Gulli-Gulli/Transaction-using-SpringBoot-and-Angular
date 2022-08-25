@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+body{
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #dadcd7;
+  padding: 0;
+  margin:0;
+}
+
+h1{
+  text-align: center;
+} img{
+  height: 400px;
+  width: 400px;
+  margin-left: 50px;
+}
+
+.parent{
+  display: flex;
+  
+}
+.container-one{
+  flex: 1 50%;
+  justify-content: center;
+}
+
+.container-two{
+  display: flex;
+  flex-flow: row wrap;
+} 
+
+.segment{
+  display: inline-flex;
+  flex: 1 ;
+  margin: 16px;
+} 
+
+.segment-txn{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0 225px;
+  
+}
+
+
+
+p{
+  font-size: 1.2em;
+  color: darkorange;
+  font-weight: bold;
+}
+
+
+input[type="radio"]{
+  margin-right: 1.2em;
+  margin-bottom: 0.5em;
+  margin-top: 4px;
+  width: 1em; height: 1em;
+}
+
+input[type="text"] {
+  display:flex;
+  border-radius: 1em;
+  width: 16em;
+  height: 2.2em;
+  padding-left: 10px;
+  padding-bottom: 4px;
+  margin-bottom: 0.5em;
+}
+
+button{
+
+  background-color: darkorange;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+}
